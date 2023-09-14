@@ -1,0 +1,6 @@
+framework module Pods_Planet_uiKit {
+  umbrella header "Pods-Planet_uiKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
