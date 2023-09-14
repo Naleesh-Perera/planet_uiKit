@@ -10,8 +10,6 @@ actor Net{
     public static let shared = Net()
     private init(){}
     
-    private let baseURL = "https://swapi.dev/api/"
-    
     enum NetworkError: Error {
         case invalidURL
         case requestFailed
@@ -32,13 +30,10 @@ actor Net{
                     observer.onError(NSError(domain: "Error parsing data", code: 0, userInfo: nil))
                     return
                 }
-                
                 observer.onNext(decodedData)
                 observer.onCompleted()
             }
-            
             task.resume()
-            
             return Disposables.create {
                 task.cancel()
             }

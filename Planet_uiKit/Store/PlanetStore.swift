@@ -7,11 +7,23 @@ import RxSwift
 
 class PlanetStore {
     
-    func getAllPlanets() async -> Observable<PlanetData> {
-        
-        return await Net.shared.fetchData(endPoint: .fetchPlanet)
-            .map {
-                return $0
-            }
+    static let shared = PlanetStore()
+    private let disposeBag = DisposeBag()
+    
+    private var planetDataSubject = BehaviorSubject<PlanetData?>(value: nil)
+    
+    var planetData: Observable<PlanetData?> {
+        return planetDataSubject.asObservable()
+    }
+    
+    func fetchPlanetData() async{
+        await Net.shared.fetchData(endPoint: .fetchPlanet)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] planetData in
+                self?.planetDataSubject.onNext(planetData)
+            }, onError: { error in
+                print("Error fetching data: \(error)")
+            })
+            .disposed(by: disposeBag)
     }
 }

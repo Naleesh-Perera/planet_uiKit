@@ -15,16 +15,63 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="77h-a0-ANo">
+                                <rect key="frame" x="20" y="59" width="353" height="299.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="13e-Pg-shH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTu-XZ-xhP">
+                                <rect key="frame" x="20" y="369" width="353" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orbitral Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjT-2y-wCI">
+                                <rect key="frame" x="20" y="409" width="353" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gravity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8F-gd-swt">
+                                <rect key="frame" x="20" y="443" width="353" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VjT-2y-wCI" firstAttribute="trailing" secondItem="rTu-XZ-xhP" secondAttribute="trailing" id="CY5-dp-VcX"/>
+                            <constraint firstItem="j8F-gd-swt" firstAttribute="trailing" secondItem="VjT-2y-wCI" secondAttribute="trailing" id="I0k-Wg-Ol4"/>
+                            <constraint firstItem="VjT-2y-wCI" firstAttribute="top" secondItem="rTu-XZ-xhP" secondAttribute="bottom" constant="10" id="KhU-jr-r4k"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rTu-XZ-xhP" secondAttribute="trailing" constant="20" id="Mq5-P3-frI"/>
+                            <constraint firstItem="rTu-XZ-xhP" firstAttribute="top" secondItem="77h-a0-ANo" secondAttribute="bottom" constant="10" id="VAz-wN-fUk"/>
+                            <constraint firstItem="77h-a0-ANo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Y7y-b3-bJX"/>
+                            <constraint firstItem="j8F-gd-swt" firstAttribute="top" secondItem="VjT-2y-wCI" secondAttribute="bottom" constant="10" id="a88-XA-esN"/>
+                            <constraint firstItem="j8F-gd-swt" firstAttribute="leading" secondItem="VjT-2y-wCI" secondAttribute="leading" id="dKp-Q6-C0t"/>
+                            <constraint firstItem="VjT-2y-wCI" firstAttribute="leading" secondItem="rTu-XZ-xhP" secondAttribute="leading" id="ldY-3O-Npm"/>
+                            <constraint firstItem="rTu-XZ-xhP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="tPf-lG-ERW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="77h-a0-ANo" secondAttribute="trailing" constant="20" id="x0V-b2-Mae"/>
+                            <constraint firstItem="77h-a0-ANo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="zHp-Xy-E6Q"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="planetGravity" destination="j8F-gd-swt" id="YoN-0d-TbH"/>
+                        <outlet property="planetImg" destination="77h-a0-ANo" id="5P4-qU-cTA"/>
+                        <outlet property="planetName" destination="rTu-XZ-xhP" id="rk7-3H-OYo"/>
+                        <outlet property="planetOrbitPeriod" destination="VjT-2y-wCI" id="buo-oF-5Ia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="-2"/>
+            <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
